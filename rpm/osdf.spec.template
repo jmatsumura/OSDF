@@ -2,6 +2,7 @@
 %define Name @name@
 %define lcName @lc_name@
 %define _prefix /usr/lib/%{lcName}
+%define _unpackaged_files_terminate_build 0
 
 Summary: %{Name} - REST API for storing and retrieving scientific data.
 Name: %{lcName}
