@@ -98,11 +98,11 @@ fi
 %__cp working/users.db %{buildroot}%{_localstatedir}/run/%{lcName}/working/
 
 # Startup script and config files
-%__mkdir -p %{buildroot}/%{_sysconfdir}/init.d
-%__mkdir -p %{buildroot}/%{_sysconfdir}/%{lcName}
-%__mkdir -p %{buildroot}/%{_sysconfdir}/logrotate.d
-%__mkdir -p %{buildroot}/%{_sysconfdir}/default
-%__cp rpm/init.sh %{buildroot}/%{_sysconfdir}/init.d/%{lcName}
+%__mkdir -p %{buildroot}%{_sysconfdir}/init.d
+%__mkdir -p %{buildroot}%{_sysconfdir}/%{lcName}
+%__mkdir -p %{buildroot}%{_sysconfdir}/logrotate.d
+%__mkdir -p %{buildroot}%{_sysconfdir}/default
+%__cp rpm/init.sh %{buildroot}%{_sysconfdir}/init.d/%{lcName}
 %__cp rpm/etc/default/%{lcName} %{buildroot}%{_sysconfdir}/default/%{lcName}
 %__cp rpm/etc/logrotate.d/logrotate.conf %{buildroot}%{_sysconfdir}/logrotate.d/%{lcName}
 sed -i -e "s/@NAME@/%{lcName}/" %{buildroot}/%{_sysconfdir}/logrotate.d/%{lcName}
